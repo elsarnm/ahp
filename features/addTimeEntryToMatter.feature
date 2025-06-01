@@ -1,7 +1,7 @@
 @add_timeEntryToMatter
 Feature: Record time to a matter
 
-Scenario: User successfully records time entry
+Scenario: 2d. User successfully records time entry
   Given the user is logged into Clio
   And the user is viewing a "-Prince Group: Test example 1" matter
   When the user clicks "Add time"
