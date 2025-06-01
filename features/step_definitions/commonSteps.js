@@ -1,6 +1,6 @@
-const { Given, When } = require('@cucumber/cucumber');
-const { userLogin } = require('../helpers/loginHelpers');
-const { goToSection, clickButton } = require('../helpers/navigationHelpers');
+import { Given, When } from '@cucumber/cucumber';
+import { userLogin } from '../helpers/loginHelpers.js';
+import { goToSection, clickButton } from '../helpers/navigationHelpers.js';
 
 
 Given('the user is logged into Clio', async function () {

@@ -1,6 +1,6 @@
-const { When, Then } = require('@cucumber/cucumber');
-const { goToMattersList } = require('../helpers/navigationHelpers');
-const { fillMattersDetails } = require('../helpers/formHelpers');
+import { When, Then } from '@cucumber/cucumber';
+import { goToMattersList } from '../helpers/navigationHelpers.js';
+import { fillMattersDetails } from '../helpers/formHelpers.js';
 
 
 When('fills in all required fields', async function () {

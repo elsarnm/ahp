@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "NODE_ENV=prod NODE_OPTIONS='-r dotenv/config' cucumber-js  --require features --format json:./reports/json/cucumber_report.json",
+    "test": "NODE_ENV=prod NODE_OPTIONS='-r dotenv/config' cucumber-js features --format json:./reports/json/cucumber_report.json",
     "report": "node generate-report.js",
     "upload": "node uploadToArtillery.js",
     "test:with-report": "npm run test && npm run upload"

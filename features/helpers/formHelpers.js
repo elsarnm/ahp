@@ -1,6 +1,6 @@
-const { expect } = require('@playwright/test');
+import { expect } from '@playwright/test';
 
-exports.fillCompanyDetails = async function (page) {
+export async function fillCompanyDetails(page) {
   await page.getByRole('textbox', { name: 'Name' }).click();
   await page.getByRole('textbox', { name: 'Name' }).fill('Prince Group');
   await page.getByRole('textbox', { name: 'Email address' }).click();
@@ -29,7 +29,7 @@ exports.fillCompanyDetails = async function (page) {
   await page.getByRole('button', { name: 'Save contact' }).click();
 }
 
-exports.fillMattersDetails = async function (page) {
+export async function fillMattersDetails(page) {
   await page.getByRole('region', { name: 'Template information' }).getByLabel('select').click();
   await page.getByRole('option', { name: 'Example' }).click();
   await page.getByLabel('Matter details').locator('cc-contact-field').getByRole('button', { name: 'select' }).click();
@@ -85,7 +85,7 @@ exports.fillMattersDetails = async function (page) {
   await page.getByRole('spinbutton', { name: 'Notify when trust funds are' }).fill('80');
 }
 
-exports.fillTaskDetails = async function (page) {
+export async function fillTaskDetails(page) {
   await page.getByRole('textbox', { name: 'Name' }).click();
   await page.getByRole('textbox', { name: 'Name' }).fill('Task 2');
   await page.getByLabel('Priority* Normal HighNormalLow').selectOption('low');
@@ -102,16 +102,16 @@ exports.fillTaskDetails = async function (page) {
   await page.locator('cc-task-due-date').getByRole('button', { name: 'select', exact: true }).click();
   await page.getByRole('button', { name: 'Next' }).click();
   await page.getByRole('button', { name: 'Next' }).click();
-  await page.getByRole('link', { name: '31' }).click();
+  await page.getByRole('link', { name: '1', exact: true }).first().click();
 }
 
-exports.fillTimeDetails = async function (page) {
+export async function fillTimeDetails(page) {
   await page.getByRole('textbox', { name: 'Duration Info Toggle timer' }).click();
   await page.getByRole('textbox', { name: 'Duration Info Toggle timer' }).fill('1h');
   await page.locator('cc-activities-activity-category-field').getByRole('button', { name: 'select' }).click();
   await page.locator('cc-activities-activity-category-field').getByRole('button', { name: 'select' }).click();
   await page.locator('th-date-picker').getByRole('button', { name: 'select' }).click();
-  await page.getByRole('link', { name: '31' }).click();
+  await page.getByRole('link', { name: '1', exact: true }).first().click();
   await page.getByRole('textbox', { name: 'Description' }).click();
   await page.getByRole('textbox', { name: 'Description' }).fill('Example record 2');
   await page.getByRole('textbox', { name: 'Rate' }).click();

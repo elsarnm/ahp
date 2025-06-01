@@ -1,5 +1,5 @@
-const { setWorldConstructor, World, setDefaultTimeout } = require('@cucumber/cucumber');
-const { chromium } = require('playwright');
+import { setWorldConstructor, World, setDefaultTimeout } from '@cucumber/cucumber';
+import { chromium } from 'playwright';
 
 class CustomWorld extends World {
   async launchBrowser() {

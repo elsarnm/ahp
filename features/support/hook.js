@@ -1,8 +1,7 @@
-const { Before, After } = require('@cucumber/cucumber');
-const { chromium } = require('playwright');
-const fs = require('fs');
-const path = require('path');
-
+import { Before, After } from '@cucumber/cucumber';
+import { chromium } from 'playwright';
+import fs from 'fs';
+import path from 'path';
 
 Before(async function () {
   this.browser = await chromium.launch({ headless: false });
@@ -11,24 +10,17 @@ Before(async function () {
 });
 
 After(async function (scenario) {
-  // Jika scenario gagal, ambil screenshot (jika page masih terbuka)
   if (scenario.result?.status === 'FAILED') {
-    if (this.page && !this.page.isClosed()) {
-      const screenshot = await this.page.screenshot();
-      const screenshotPath = path.resolve(`./reports/screenshots/${Date.now()}.png`);
-      fs.mkdirSync(path.dirname(screenshotPath), { recursive: true });
-      fs.writeFileSync(screenshotPath, screenshot);
+    const screenshot = await this.page.screenshot();
+    const screenshotDir = './reports/screenshots';
+    if (!fs.existsSync(screenshotDir)) {
+      fs.mkdirSync(screenshotDir, { recursive: true });
     }
+    const screenshotPath = path.resolve(`${screenshotDir}/${Date.now()}.png`);
+    fs.writeFileSync(screenshotPath, screenshot);
   }
 
-  // Tutup page dan browser jika masih aktif
-  if (this.page && !this.page.isClosed()) {
-    await this.page.close();
-  }
-  if (this.context) {
-    await this.context.close();
-  }
-  if (this.browser) {
-    await this.browser.close();
-  }
+  if (this.page && !this.page.isClosed()) await this.page.close();
+  if (this.context) await this.context.close();
+  if (this.browser) await this.browser.close();
 });

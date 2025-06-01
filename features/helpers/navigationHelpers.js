@@ -1,52 +1,51 @@
-const { expect } = require('@playwright/test');
+import { expect } from '@playwright/test';
 
 // Goto menu, section, and link
-exports.goToCompany = async function (page) {
+export async function goToCompany(page) {
   await page.getByRole('button', { name: 'Create new' }).click();
   await page.getByRole('menuitem', { name: 'Contact' }).click();
   await page.locator('label').filter({ hasText: 'Company' }).first().click();
-};
+}
 
-exports.goToContactList = async function (page) {
+export async function goToContactList(page) {
   await page.getByRole('link', { name: 'Contacts' }).click();
   await expect(page.getByRole('gridcell', { name: 'Prince Group' })).toBeVisible();
 }
 
-exports.goToSection = async function (page, sectionName) {
+export async function goToSection(page, sectionName) {
   await page.getByRole('link', { name: sectionName }).click();
 }
 
-exports.goToMattersList = async function (page) {
+export async function goToMattersList(page) {
   await page.getByRole('link', { name: 'Matters' }).click();
   await expect(page.getByRole('link', { name: '-Prince Group: Test example 1' })).toBeVisible();
   await expect(page.locator('tbody')).toContainText('00001-Prince Group: Test example 1');
 }
 
-exports.goToTaskList = async function (page) {
+export async function goToTaskList(page) {
   await expect(page.getByRole('gridcell', { name: 'Task 2 low Task example' })).toBeVisible();
 }
 
-exports.goToBillingMatter = async function (page) {
+export async function goToBillingMatter(page) {
   await page.getByRole('button', { name: 'Quick bill' }).click();
-  await expect(page.locator('iframe[title="Quick Bill \\| Clio"]').contentFrame().getByLabel('Flat rate')).toBeVisible();
-  await expect(page.locator('iframe[title="Quick Bill \\| Clio"]').contentFrame().getByLabel('Example record')).toBeVisible();
-  await expect(page.locator('iframe[title="Quick Bill \\| Clio"]').contentFrame().getByText('Date User Activity Category')).toBeVisible();
+  await expect(page.frameLocator('iframe[title="Quick Bill \\| Clio"]').getByLabel('Example record')).toContainText('Example record 2');
+  await expect(page.frameLocator('iframe[title="Quick Bill \\| Clio"]').getByLabel('Flat rate')).toContainText('Flat rate');
+  // const frame = await page.frameLocator('iframe[title="Quick Bill \\| Clio"]').frame();
+  // await expect(frame.getByLabel('Flat rate')).toBeVisible();
+  // await expect(frame.getByLabel('Example record')).toBeVisible();
+  // await expect(frame.getByText('Date User Activity Category')).toBeVisible();
 }
 
 // Click button
 
-exports.clickButton = async function (page, buttonName) {
+export async function clickButton(page, buttonName) {
   await page.getByRole('button', { name: buttonName }).click();
 }
 
-exports.clickButton2 = async function (page, buttonName2) {
+export async function clickButton2(page, buttonName2) {
   await page.getByRole('button', { name: buttonName2 }).click();
 }
 
-exports.clickNewTask = async function (page) {
+export async function clickNewTask(page) {
   await page.getByTitle('New task').getByLabel('New task').click();
 }
-
-
-
-

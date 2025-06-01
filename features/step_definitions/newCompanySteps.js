@@ -1,7 +1,7 @@
-const { Given, When, Then } = require('@cucumber/cucumber');
-const { userLogin } = require('../helpers/loginHelpers');
-const { goToCompany, goToContactList } = require('../helpers/navigationHelpers');
-const { fillCompanyDetails } = require('../helpers/formHelpers');
+import { Given, When, Then } from '@cucumber/cucumber';
+import { userLogin } from '../helpers/loginHelpers.js';
+import { goToCompany, goToContactList } from '../helpers/navigationHelpers.js';
+import { fillCompanyDetails } from '../helpers/formHelpers.js';
 
 
 Given('the user is logged into the Clio dashboard', { timeout: 100000 }, async function () {
