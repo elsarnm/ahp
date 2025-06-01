@@ -1,0 +1,440 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "full-workflow;2a.-user-successfully-creates-a-new-company",
+        "keyword": "Scenario",
+        "line": 4,
+        "name": "2a. User successfully creates a new company",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2723483357
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 5,
+            "name": "the user is logged into the Clio dashboard",
+            "match": {
+              "location": "features/step_definitions/newCompanySteps.js:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17354961789
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "the user goto new company form",
+            "match": {
+              "location": "features/step_definitions/newCompanySteps.js:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 13722210055
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "the user enters valid company details",
+            "match": {
+              "location": "features/step_definitions/newCompanySteps.js:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7247823821
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "the new company should be visible in the company list",
+            "match": {
+              "location": "features/step_definitions/newCompanySteps.js:19"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 5435262370,
+              "error_message": "locator._expect: Error: strict mode violation: getByRole('gridcell', { name: 'Prince Group' }) resolved to 2 elements:\n    1) <td class=\"\" role=\"gridcell\">…</td> aka getByRole('gridcell', { name: 'Prince Group Client' })\n    2) <td class=\"\" role=\"gridcell\">…</td> aka getByRole('gridcell', { name: 'Prince Group', exact: true })\n\nCall log:\n\u001b[2m  - locator._expect with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('gridcell', { name: 'Prince Group' })\u001b[22m\n\n    at exports.goToContactList (/Users/queenels/ahp/features/helpers/navigationHelpers.js:12:70)\n    at async CustomWorld.<anonymous> (/Users/queenels/ahp/features/step_definitions/newCompanySteps.js:20:5)"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "failed",
+              "duration": 750942654,
+              "error_message": "page.screenshot: Target page, context or browser has been closed\n    at CustomWorld.<anonymous> (/Users/queenels/ahp/features/support/hook.js:16:40)"
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@full_workflow",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "full-workflow;2b.-user-successfully-creates-a-new-matter",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "2b. User successfully creates a new matter",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2955970943
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 11,
+            "name": "the user is logged into Clio",
+            "match": {
+              "location": "features/step_definitions/commonSteps.js:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 27610827183
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "the user navigates to the \"Matters\" section",
+            "match": {
+              "location": "features/step_definitions/commonSteps.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 19928736476
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "clicks on \"New matter\"",
+            "match": {
+              "location": "features/step_definitions/commonSteps.js:14"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 413885777
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "fills in all required fields",
+            "match": {
+              "location": "features/step_definitions/newMatterSteps.js:6"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 3465847054,
+              "error_message": "locator.click: Error: strict mode violation: getByRole('option', { name: 'Prince Group (qa.testing.els@' }) resolved to 2 elements:\n    1) <li tabindex=\"-1\" role=\"option\" class=\"k-item\" unselectable=\"on\" aria-selected=\"false\" data-offset-index=\"1\">…</li> aka getByRole('option', { name: 'Prince Group (qa.testing.els@' }).first()\n    2) <li tabindex=\"-1\" role=\"option\" class=\"k-item\" unselectable=\"on\" aria-selected=\"false\" data-offset-index=\"2\">…</li> aka getByRole('option', { name: 'Prince Group (qa.testing.els@' }).nth(1)\n\nCall log:\n\u001b[2m  - waiting for getByRole('option', { name: 'Prince Group (qa.testing.els@' })\u001b[22m\n\n    at exports.fillMattersDetails (/Users/queenels/ahp/features/helpers/formHelpers.js:36:77)\n    at async CustomWorld.<anonymous> (/Users/queenels/ahp/features/step_definitions/newMatterSteps.js:7:5)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "clicks \"Save matter\"",
+            "match": {
+              "location": "features/step_definitions/commonSteps.js:18"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 16,
+            "name": "the new matter should be listed in the Matters section",
+            "match": {
+              "location": "features/step_definitions/newMatterSteps.js:10"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "failed",
+              "duration": 541684915,
+              "error_message": "page.screenshot: Target page, context or browser has been closed\n    at CustomWorld.<anonymous> (/Users/queenels/ahp/features/support/hook.js:16:40)"
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@full_workflow",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "full-workflow;2c.-user-successfully-creates-a-task",
+        "keyword": "Scenario",
+        "line": 18,
+        "name": "2c. User successfully creates a task",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1364137514
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 19,
+            "name": "the user is logged into Clio",
+            "match": {
+              "location": "features/step_definitions/commonSteps.js:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 16714076392
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 20,
+            "name": "the user navigates to the \"Tasks\" section",
+            "match": {
+              "location": "features/step_definitions/commonSteps.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 12624410745
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "user clicks on New task",
+            "match": {
+              "location": "features/step_definitions/newTaskSteps.js:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1546269636
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 22,
+            "name": "fills in all required task fields",
+            "match": {
+              "location": "features/step_definitions/newTaskSteps.js:6"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 304559160,
+              "error_message": "locator.fill: Error: strict mode violation: getByText('Task e') resolved to 2 elements:\n    1) <div dir=\"auto\" spellcheck=\"true\" aria-disabled=\"false\" contenteditable=\"true\" class=\"fr-element fr-view\">Task e</div> aka locator('[data-test=\"apollo-create-task-modal\"]').getByText('Task e')\n    2) <div data-testid=\"formatted_description\" class=\"line-clamp line-clamp-2 pre-wrap\" ng-bind-html=\"$ctrl.formattedDescription\">Task example 2</div> aka getByTestId('formatted_description')\n\nCall log:\n\u001b[2m  - waiting for getByText('Task e')\u001b[22m\n\n    at exports.fillTaskDetails (/Users/queenels/ahp/features/helpers/formHelpers.js:93:34)\n    at async CustomWorld.<anonymous> (/Users/queenels/ahp/features/step_definitions/newTaskSteps.js:7:5)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 23,
+            "name": "clicks \"Save task\"",
+            "match": {
+              "location": "features/step_definitions/commonSteps.js:18"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 24,
+            "name": "the task should appear in the Task list",
+            "match": {
+              "location": "features/step_definitions/newTaskSteps.js:14"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "failed",
+              "duration": 511353830,
+              "error_message": "page.screenshot: Target page, context or browser has been closed\n    at CustomWorld.<anonymous> (/Users/queenels/ahp/features/support/hook.js:16:40)"
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@full_workflow",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "full-workflow;2d.-user-successfully-records-time-entry",
+        "keyword": "Scenario",
+        "line": 26,
+        "name": "2d. User successfully records time entry",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1417061107
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 27,
+            "name": "the user is logged into Clio",
+            "match": {
+              "location": "features/step_definitions/commonSteps.js:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15444657655
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 28,
+            "name": "the user is viewing a \"-Prince Group: Test example 1\" matter",
+            "match": {
+              "location": "features/step_definitions/addTimeEntryToMatterSteps.js:6"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 15250850258
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 29,
+            "name": "the user clicks \"Add time\"",
+            "match": {
+              "location": "features/step_definitions/addTimeEntryToMatterSteps.js:11"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1741470507
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 30,
+            "name": "fills in time duration, description, and rate",
+            "match": {
+              "location": "features/step_definitions/addTimeEntryToMatterSteps.js:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1301996558
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 31,
+            "name": "clicks \"Save entry\"",
+            "match": {
+              "location": "features/step_definitions/commonSteps.js:18"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 150616692
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 32,
+            "name": "the time entry should be added to the matter's billing record",
+            "match": {
+              "location": "features/step_definitions/addTimeEntryToMatterSteps.js:19"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 4501215403,
+              "error_message": "locator._expect: Error: strict mode violation: getByLabel('Example record') resolved to 2 elements:\n    1) <textarea id=\"time_entry_form_note\" name=\"time_entry_form[note]\" class=\" styled-input time-entry-note\" placeholder=\"Add a note for this time entry.\">Example record 2</textarea> aka getByPlaceholder('Add a note for this time').nth(1)\n    2) <textarea id=\"time_entry_form_note\" name=\"time_entry_form[note]\" class=\" styled-input time-entry-note\" placeholder=\"Add a note for this time entry.\">Example record 2</textarea> aka getByPlaceholder('Add a note for this time').nth(2)\n\nCall log:\n\u001b[2m  - locator._expect with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('iframe[title=\"Quick Bill \\\\| Clio\"]').contentFrame().getByLabel('Example record')\u001b[22m\n\n    at exports.goToBillingMatter (/Users/queenels/ahp/features/helpers/navigationHelpers.js:32:113)\n    at async CustomWorld.<anonymous> (/Users/queenels/ahp/features/step_definitions/addTimeEntryToMatterSteps.js:20:5)"
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "failed",
+              "duration": 727248661,
+              "error_message": "page.screenshot: Target page, context or browser has been closed\n    at CustomWorld.<anonymous> (/Users/queenels/ahp/features/support/hook.js:16:40)"
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@full_workflow",
+            "line": 1
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "full-workflow",
+    "line": 2,
+    "keyword": "Feature",
+    "name": "Full workflow",
+    "tags": [
+      {
+        "name": "@full_workflow",
+        "line": 1
+      }
+    ],
+    "uri": "features/fullWorkflow.feature"
+  }
+]
